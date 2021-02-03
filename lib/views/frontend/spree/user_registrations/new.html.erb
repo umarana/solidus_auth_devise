@@ -1,21 +1,21 @@
-<% @body_id = 'signup' %>
-
-<%= render 'spree/shared/error_messages', target: resource %>
-
-<div id="new-customer">
-  <h6><%= t('spree.new_customer') %></h6>
-
-  <div data-hook="signup">
-    <%= form_for resource, as: :spree_user, url: spree.registration_path(resource) do |f| %>
-      <div data-hook="signup_inside_form">
-        <%= render partial: 'spree/shared/user_form', locals: { f: f } %>
-        <p><%= f.submit t('spree.create'), class: 'button primary' %></p>
+<div class="site-wrapper-reveal ">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-7 ml-auto mr-auto">
+        <div class="myaccount-box-wrapper">
+          <div class="tab-content content-modal-box">
+            <div class="tab-pane fade show active" id="tab_list_06" role="tabpanel">
+              <h6>New Customer </h6>
+              <%= form_for resource, as: :spree_user, url: spree.registration_path(resource) , html:{class:'account-form-box'} do |f| %>
+                <div data-hook="signup_inside_form">
+                  <%= render partial: 'spree/shared/user_form', locals: { f: f } %>
+                  <p><%= f.submit t('spree.create'), class: 'btn btn--full btn--black mt-10'  %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-    <% end %>
-    <%= t('spree.or') %>&nbsp;<%= link_to t('spree.login_as_existing'), spree.login_path %>
-
+    </div>
   </div>
-
 </div>
-
-<div data-hook="login_extras"></div>

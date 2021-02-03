@@ -1,17 +1,14 @@
 <p>
-  <%= f.label :email, t('spree.email') %><br />
-  <%= f.email_field :email, class: 'title' %>
+  <div class="single-input">
+    <%= f.email_field :email, class: '', placeholder:'Email', tabindex: 1, autofocus: true %>
+  </div>
 </p>
 <div id="password-credentials">
-  <p>
-    <%= f.label :password, t('spree.password') %><br />
-    <%= f.password_field :password, class: 'title' %>
-  </p>
-
-  <p>
-    <%= f.label :password_confirmation, t('spree.confirm_password') %><br />
-    <%= f.password_field :password_confirmation, class: 'title' %>
-  </p>
+  <div class="single-input">
+    <%= f.password_field :password, class: '', placeholder:'Password', tabindex: 2   %>
+  </div>
+  <div class="single-input">
+    <%= f.password_field :password, class: '', placeholder:'Confirm Password' , tabindex: 3  %>
+  </div>
 </div>
-
 <div data-hook="signup_below_password_fields"></div>
